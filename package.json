@@ -1,0 +1,19 @@
+{
+  "name": "valli-blog",
+  "version": "1.0.0",
+  "description": "blog for myself ",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^1.8.3"
+  },
+  "repository": "git@github.com:vallife/valli-blog.git",
+  "author": "dyc <dycyachao0818@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vuepress-theme-reco": "^1.6.10"
+  }
+}
