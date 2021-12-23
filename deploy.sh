@@ -9,10 +9,14 @@ yarn docs:build
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
+# 拷贝目录和文件
+cp -r ../../../.github ./
+
 git init
 git add -A
 git commit -m 'deploy'
 
 git push -f git@github.com:DUANQY0818/test.git master:gh-pages
+# git push -f git@gitee.com:superd-web/test.git master:gh-pages
 
 cd -
