@@ -1,0 +1,24 @@
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    # 定时任务 每天 11:00 自动签到，按照计划任务队列，可能延迟 3 + 8 = 北京时间 11
+    - cron: '00 3 * * *'
+
+jobs:
+  juejin:
+    runs-on: ubuntu-latest
+    name: 掘金自动签到
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: DUANQY0818/test@main
+        env:
+          JUEJIN_COOKIE: ${{secrets.JUEJIN_COOKIE}}
+        with:
+          who-to-greet: 'DQY'
+      # Use the output from the `hello` step
+      - name: Get the output
+        run: |
+          echo "The time was ${{ steps.hello.outputs.time }}"
+          echo "签到结果： ${{ steps.hello.outputs.checkInResult }}"
